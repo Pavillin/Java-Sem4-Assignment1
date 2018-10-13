@@ -5,6 +5,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="498.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.ContactView">
+<AnchorPane prefHeight="498.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ContactViewController">
    <children>
       <VBox alignment="CENTER" layoutX="148.0" layoutY="157.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -27,8 +28,11 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="269.0" prefWidth="240.0" spacing="10.0">
                      <children>
-                        <ImageView fitHeight="211.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button mnemonicParsing="false" text="Button" />
+                        <ImageView fx:id="imageView" fitHeight="211.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/Default.jpg" />
+                           </image></ImageView>
+                        <Button mnemonicParsing="false" text="Choose Image" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -50,24 +54,40 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="First Name" />
-                        <Label text="Birthday" GridPane.rowIndex="2" />
-                        <Label text="Last Name" GridPane.rowIndex="1" />
-                        <Label text="Address" GridPane.rowIndex="3" />
-                        <Label text="Phone" GridPane.rowIndex="4" />
-                        <TextField GridPane.columnIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="First Name">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Last Name" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Birthday" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Address" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <Label text="Phone" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Label>
+                        <TextField fx:id="first_nameTextField" GridPane.columnIndex="1" />
+                        <TextField fx:id="last_nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="addressTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="phoneTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="birthdayDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                </children>
             </HBox>
             <HBox alignment="TOP_RIGHT" prefHeight="39.0" prefWidth="322.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Save" />
+                  <Button mnemonicParsing="false" text="Cancel" />
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
