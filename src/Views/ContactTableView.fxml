@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="463.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ContactTableViewController">
+<AnchorPane prefHeight="463.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ContactTableViewController">
    <children>
       <VBox alignment="CENTER" layoutX="250.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -31,10 +31,10 @@
             </TableView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <TextField promptText="Search Contacts" />
-                  <Button mnemonicParsing="false" text="Search" />
-                  <Button mnemonicParsing="false" text="Edit Contact" />
-                  <Button mnemonicParsing="false" text="Create Contact" />
+                  <TextField disable="true" promptText="Search Contacts" />
+                  <Button disable="true" mnemonicParsing="false" text="Search" />
+                  <Button disable="true" mnemonicParsing="false" text="Edit Contact" />
+                  <Button mnemonicParsing="false" onAction="#changeToContactScene" text="Create Contact" />
                </children>
             </HBox>
          </children>

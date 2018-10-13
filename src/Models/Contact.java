@@ -5,12 +5,12 @@ import javafx.scene.image.Image;
 import java.time.LocalDate;
 
 public class Contact {
-    private String firstName, lastName, address, phone;
+    private String firstName, lastName, address, phone, image;
     private LocalDate birthday;
     private int id;
-    private Image image;
+    //private Image image;
 
-    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday, Image image) {
+    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday, String image) {
         setId(id);
         setFirstName(firstName);
         setLastName(lastName);
@@ -90,15 +90,18 @@ public class Contact {
         }
     }
 
-    public Image getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
-        if(image.equals("")){
-            image = new Image("default.jpg");
-        } else{
-            this.image = image;
-        }
+    public void setImage(String image) {
+        this.image = image;
     }
+//    public void setImage(Image image) {
+//        if(image.equals("")){
+//            image = new Image("default.jpg");
+//        } else{
+//            this.image = image;
+//        }
+//    }
 }

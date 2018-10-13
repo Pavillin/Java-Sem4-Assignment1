@@ -13,7 +13,7 @@ public class Launch extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("ContactView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ContactTableView.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
