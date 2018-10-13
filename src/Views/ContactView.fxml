@@ -51,8 +51,8 @@
                     </rowConstraints>
                      <children>
                         <Label text="First Name" />
-                        <Label text="Last Name" GridPane.rowIndex="2" />
-                        <Label text="Birthday" GridPane.rowIndex="1" />
+                        <Label text="Birthday" GridPane.rowIndex="2" />
+                        <Label text="Last Name" GridPane.rowIndex="1" />
                         <Label text="Address" GridPane.rowIndex="3" />
                         <Label text="Phone" GridPane.rowIndex="4" />
                         <TextField GridPane.columnIndex="1" />

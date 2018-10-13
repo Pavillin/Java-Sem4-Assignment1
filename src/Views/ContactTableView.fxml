@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="463.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.ContactTableView">
+<AnchorPane prefHeight="463.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ContactTableViewController">
    <children>
       <VBox alignment="CENTER" layoutX="250.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -20,13 +20,13 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <TableView prefHeight="312.0" prefWidth="651.0">
+            <TableView fx:id="tableView" prefHeight="312.0" prefWidth="651.0">
               <columns>
-                <TableColumn prefWidth="60.0" text="ID" />
-                <TableColumn prefWidth="123.0" text="First Name" />
-                  <TableColumn prefWidth="117.0" text="Last Name" />
-                  <TableColumn prefWidth="184.0" text="Address" />
-                  <TableColumn prefWidth="166.0" text="Phone" />
+                <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="first_nameColumn" prefWidth="123.0" text="First Name" />
+                  <TableColumn fx:id="last_nameColumn" prefWidth="117.0" text="Last Name" />
+                  <TableColumn fx:id="addressColumn" prefWidth="184.0" text="Address" />
+                  <TableColumn fx:id="phoneColumn" prefWidth="166.0" text="Phone" />
               </columns>
             </TableView>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
