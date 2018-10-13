@@ -1,5 +1,7 @@
 package Controllers;
 
+import Models.Contact;
+import Models.DBConnect;
 import Models.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ContactViewController implements Initializable {
@@ -27,5 +30,20 @@ public class ContactViewController implements Initializable {
 
     public void cancelButtonPushed(ActionEvent sceneChange) throws IOException {
         SceneChanger.changeScenes(sceneChange, "../Views/ContactTableView.fxml", "Contacts");
+    }
+
+    @FXML
+    public void createContactButtonPushed() throws SQLException {
+        Contact newContact = new Contact(
+                0,
+                first_nameTextField.getText(),
+                last_nameTextField.getText(),
+                addressTextField.getText(),
+                phoneTextField.getText(),
+                birthdayDatePicker.getValue(),
+                "Default.jpg"
+        );
+        System.out.printf("New phone created: %s", newContact);
+        DBConnect.insertContactIntoDB(newContact);
     }
 }

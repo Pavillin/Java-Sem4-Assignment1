@@ -86,7 +86,7 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" prefHeight="39.0" prefWidth="322.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" text="Save" />
+                  <Button mnemonicParsing="false" onAction="#createContactButtonPushed" text="Save" />
                   <Button mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
                </children>
                <VBox.margin>
