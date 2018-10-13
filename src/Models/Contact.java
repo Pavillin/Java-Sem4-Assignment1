@@ -1,17 +1,31 @@
 package Models;
 
+import javafx.scene.image.Image;
+
 import java.time.LocalDate;
 
 public class Contact {
     private String firstName, lastName, address, phone;
     private LocalDate birthday;
+    private int id;
+    private Image image;
 
-    public Contact(String firstName, String lastName, String address, String phone, LocalDate birthday) {
+    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday, Image image) {
+        setId(id);
         setFirstName(firstName);
         setLastName(lastName);
         setAddress(address);
         setPhone(phone);
         setBirthday(birthday);
+        setImage(image);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -73,6 +87,18 @@ public class Contact {
             throw new IllegalArgumentException("You were not born today, and neither was I");
         } else{
             this.birthday = birthday;
+        }
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        if(image.equals("")){
+            image = new Image("default.jpg");
+        } else{
+            this.image = image;
         }
     }
 }
