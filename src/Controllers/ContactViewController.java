@@ -30,12 +30,21 @@ public class ContactViewController implements Initializable {
 
     }
 
+    /**
+     * If user clicks the 'Cancel' button on the Create a Contact page, return them to the Contact List page
+     * @param sceneChange
+     * @throws IOException
+     */
     public void cancelButtonPushed(ActionEvent sceneChange) throws IOException {
         SceneChanger.changeScenes(sceneChange, "../Views/ContactTableView.fxml", "Contacts");
     }
 
+    /**
+     * When the 'Save' button is pushed we'll attempt to save the contact to the database and display any validation errors
+     * @param sceneChange
+     */
     @FXML
-    public void createContactButtonPushed(ActionEvent sceneChange) throws SQLException {
+    public void createContactButtonPushed(ActionEvent sceneChange) {
         try {
             Contact newContact = new Contact(
                     0,

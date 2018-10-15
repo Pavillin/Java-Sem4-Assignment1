@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Launch the application and set the default scene to the ContactTableView.fxml
+ */
 public class Launch extends Application {
     public static void main(String[]args){
         launch(args);

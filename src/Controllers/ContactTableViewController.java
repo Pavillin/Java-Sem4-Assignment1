@@ -23,9 +23,13 @@ public class ContactTableViewController implements Initializable {
     @FXML private TableColumn<Contact, String> addressColumn;
     @FXML private TableColumn<Contact, String> phoneColumn;
 
+    /**
+     * Retrieve contact data from database and add the data to the table
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //configure the table columns to integrate with the phone class
         idColumn.setCellValueFactory(new PropertyValueFactory<Contact, Integer>("id"));
         first_nameColumn.setCellValueFactory(new PropertyValueFactory<Contact, String>("firstName"));
         last_nameColumn.setCellValueFactory(new PropertyValueFactory<Contact, String>("lastName"));
@@ -39,6 +43,11 @@ public class ContactTableViewController implements Initializable {
         }
     }
 
+    /**
+     * If user clicks 'Create Contact' button, switch to the 'Create a Contact' page
+     * @param sceneChange
+     * @throws IOException
+     */
     public void changeToContactScene(ActionEvent sceneChange) throws IOException {
         SceneChanger.changeScenes(sceneChange, "../Views/ContactView.fxml", "Create a Contact");
     }

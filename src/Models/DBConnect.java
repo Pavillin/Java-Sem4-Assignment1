@@ -10,6 +10,11 @@ public class DBConnect {
     private static String password = "";
     //Fritz59!
 
+    /**
+     * Pull data from database and store into contact objects and return an arraylist with all the contacts
+     * @return
+     * @throws SQLException
+     */
     public static ArrayList<Contact> getContacts() throws SQLException {
         ArrayList<Contact> Contacts = new ArrayList<>();
         Connection conn = null;
@@ -17,16 +22,12 @@ public class DBConnect {
         ResultSet resultSet = null;
 
         try{
-            //1. connect to the database
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaAssignment1?useSSL=false",userName, password);
 
-            //2. create a statement object
             statement = conn.createStatement();
 
-            //3. create and execute the query
             resultSet = statement.executeQuery("SELECT * FROM contacts");
 
-            //4. loop over the results and add to the arraylist
             while (resultSet.next()){
                 Contact newContact = new Contact(
                         resultSet.getInt("id"),
@@ -56,19 +57,21 @@ public class DBConnect {
         return Contacts;
     }
 
+    /**
+     * Insert a contact object into the database using a prepared statement
+     * @param newContact
+     * @throws SQLException
+     */
     public static void insertContactIntoDB(Contact newContact) throws SQLException {
         Connection conn = null;
-        //prevent sql injection instead of using normal statement
         PreparedStatement ps = null;
         try{
-            //1. Connect to DB
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaAssignment1?useSSL=false",userName,password);
-            //2. create SQL statement
+            
             String sql = "INSERT INTO contacts (first_name, last_name, birthday, address, phone, image) " +
                     "VALUES (?, ?, ?, ?, ?, ?);";
-            //3. create a prepared statement
+
             ps = conn.prepareStatement(sql);
-            //4. bind params
             ps.setString(1, newContact.getFirstName());
             ps.setString(2, newContact.getLastName());
             ps.setString(3, newContact.getBirthday().toString());
