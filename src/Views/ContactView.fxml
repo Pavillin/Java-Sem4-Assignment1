@@ -5,7 +5,6 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -28,11 +27,8 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="269.0" prefWidth="240.0" spacing="10.0">
                      <children>
-                        <ImageView fx:id="imageView" fitHeight="211.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/Default.jpg" />
-                           </image></ImageView>
-                        <Button mnemonicParsing="false" text="Choose Image" />
+                        <ImageView fx:id="imageView" fitHeight="211.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button mnemonicParsing="false" onAction="#chooseImageButtonPushed" text="Choose Image" />
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

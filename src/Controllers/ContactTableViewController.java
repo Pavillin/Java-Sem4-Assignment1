@@ -38,7 +38,7 @@ public class ContactTableViewController implements Initializable {
 
         try {
             tableView.getItems().addAll(DBConnect.getContacts());
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
     }

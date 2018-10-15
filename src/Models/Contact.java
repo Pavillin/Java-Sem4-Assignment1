@@ -1,23 +1,53 @@
 package Models;
 
-import javafx.scene.image.Image;
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.security.SecureRandom;
 import java.time.LocalDate;
 
 public class Contact {
-    private String firstName, lastName, address, phone, image;
+    private String firstName, lastName, address, phone;
     private LocalDate birthday;
     private int id;
-    //private Image image;
+    private File imageFile;
 
-    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday, String image) {
+    /**
+     * First constructor that assigns a default image
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param phone
+     * @param birthday
+     */
+    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday) {
         setId(id);
         setFirstName(firstName);
         setLastName(lastName);
         setAddress(address);
         setPhone(phone);
         setBirthday(birthday);
-        setImage(image);
+        setImageFile(new File("./src/Views/Images/Default.jpg"));
+    }
+
+    /**
+     * Second constructor that will use a custom images if the user wants
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param phone
+     * @param birthday
+     * @param imageFile
+     */
+    public Contact(int id, String firstName, String lastName, String address, String phone, LocalDate birthday, File imageFile) throws IOException {
+        this(id, firstName, lastName, address, phone, birthday);
+        setImageFile(imageFile);
+        copyImageFile();
     }
 
     public int getId() {
@@ -85,14 +115,16 @@ public class Contact {
     }
 
     /**
-     * Set the phone and validate it's not empty
+     * Set the phone and validate it follows NXX pattern
+     * Area Code    City    House
+     * NXX          -XXX    -XXXX
      * @param phone
      */
     public void setPhone(String phone) {
-        if (phone.isEmpty()){
-            throw new IllegalArgumentException("Phone Number cannot be empty");
-        } else{
+        if (phone.matches("[2-9]\\d{2}[-.]?\\d{3}[-.]\\d{4}")){
             this.phone = phone;
+        } else{
+            throw new IllegalArgumentException("Phone Number must follow the pattern NXX-XXX-XXXX");
         }
     }
 
@@ -114,18 +146,87 @@ public class Contact {
         }
     }
 
-    public String getImage() {
-        return image;
+    public File getImageFile() {
+        return imageFile;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageFile(File imageFile) {
+        this.imageFile = imageFile;
     }
-//    public void setImage(Image image) {
-//        if(image.equals("")){
-//            image = new Image("default.jpg");
-//        } else{
-//            this.image = image;
+
+    /**
+     * A method that will copy the selected file to the 'Views/Images' folder and give it a unique name
+     */
+    public void copyImageFile() throws IOException {
+        Path sourcePath = imageFile.toPath();
+
+        //String uniqueFileName = getUniqueFileName(imageFile.getName());
+
+        //Path targetPath = Paths.get("../Views/Images"+uniqueFileName);
+        Path targetPath = Paths.get("./src/Views/Images/" + imageFile.getName());
+
+        Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+        imageFile = new File(targetPath.toString());
+    }
+
+    /**
+     * A method that will recieve a string that a file name and return a string with a random, unique set of letters prefixed to it
+     */
+//     String getUniqueFileName(String oldFileName){
+//        String newName;
+//
+//        SecureRandom rng = new SecureRandom();
+//
+//        do{
+//            newName = "";
+//
+//            for (int i=1;i<=32;i++){
+//                int nextChar;
+//
+//                do{
+//                    nextChar = rng.nextInt(123);
+//                }while(!validCharacterValue(nextChar));
+//
+//                newName = String.format("%s%c", newName, nextChar);
+//            }
+//            newName += oldFileName;
+//        }while(!uniqueFileInDirectory(newName));
+//        return newName;
+//    }
+
+    /**
+     * A method that will search the images directory and ensure the file name is unique
+     */
+//    public boolean uniqueFileInDirectory(String fileName){
+//        File directory = new File("../Views/Images");
+//
+//        File[] dir_contents = directory.listFiles();
+//
+//        for (File file: dir_contents){
+//            if(file.getName().equals(fileName)){
+//                return false;
+//            }
 //        }
+//        return true;
+//    }
+
+    /**
+     * This method will validate if the integer given corresponds to a valid ASCII character that could be used in a file name
+     */
+//    public boolean validCharacterValue(int asciiValue){
+//        //0-9 = ASCII range 48 to 57
+//        if(asciiValue >= 48 && asciiValue <= 57){
+//            return true;
+//        }
+//        //A-Z = ASCII range 65 to 90
+//        if (asciiValue >= 65 && asciiValue <= 90){
+//            return true;
+//        }
+//        //a-z = ASCII range 97 to 122
+//        if (asciiValue >= 97 && asciiValue <= 122){
+//            return true;
+//        }
+//        return false;
 //    }
 }

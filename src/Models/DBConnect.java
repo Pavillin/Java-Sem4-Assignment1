@@ -1,7 +1,7 @@
 package Models;
 
-import javafx.scene.image.Image;
-
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ public class DBConnect {
      * @return
      * @throws SQLException
      */
-    public static ArrayList<Contact> getContacts() throws SQLException {
+    public static ArrayList<Contact> getContacts() throws SQLException, IOException {
         ArrayList<Contact> Contacts = new ArrayList<>();
         Connection conn = null;
         Statement statement = null;
@@ -35,8 +35,8 @@ public class DBConnect {
                         resultSet.getString("last_name"),
                         resultSet.getString("address"),
                         resultSet.getString("phone"),
-                        resultSet.getDate("birthday").toLocalDate(),
-                        resultSet.getString("image"));
+                        resultSet.getDate("birthday").toLocalDate());
+                        newContact.setImageFile(new File(resultSet.getString("imageFile")));
                 Contacts.add(newContact);
             }
         }catch(SQLException e){
@@ -67,8 +67,8 @@ public class DBConnect {
         PreparedStatement ps = null;
         try{
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaAssignment1?useSSL=false",userName,password);
-            
-            String sql = "INSERT INTO contacts (first_name, last_name, birthday, address, phone, image) " +
+
+            String sql = "INSERT INTO contacts (first_name, last_name, birthday, address, phone, imageFile) " +
                     "VALUES (?, ?, ?, ?, ?, ?);";
 
             ps = conn.prepareStatement(sql);
@@ -77,7 +77,7 @@ public class DBConnect {
             ps.setString(3, newContact.getBirthday().toString());
             ps.setString(4, newContact.getAddress());
             ps.setString(5, newContact.getPhone());
-            ps.setString(6, newContact.getImage());
+            ps.setString(6, newContact.getImageFile().getName());
             //5. execute and update
             ps.executeUpdate();
         } catch (SQLException e){
