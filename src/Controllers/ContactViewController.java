@@ -35,6 +35,11 @@ public class ContactViewController implements Initializable {
     private File imageFile;
     private boolean imageFileChanged;
 
+    /**
+     * Set default image on startup
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         imageFileChanged = false;
