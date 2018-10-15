@@ -160,10 +160,9 @@ public class Contact {
     public void copyImageFile() throws IOException {
         Path sourcePath = imageFile.toPath();
 
-        //String uniqueFileName = getUniqueFileName(imageFile.getName());
+        String uniqueFileName = getUniqueFileName(imageFile.getName());
 
-        //Path targetPath = Paths.get("../Views/Images"+uniqueFileName);
-        Path targetPath = Paths.get("./src/Views/Images/" + imageFile.getName());
+        Path targetPath = Paths.get("./src/Views/Images/"+uniqueFileName);
 
         Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
 
@@ -173,60 +172,60 @@ public class Contact {
     /**
      * A method that will recieve a string that a file name and return a string with a random, unique set of letters prefixed to it
      */
-//     String getUniqueFileName(String oldFileName){
-//        String newName;
-//
-//        SecureRandom rng = new SecureRandom();
-//
-//        do{
-//            newName = "";
-//
-//            for (int i=1;i<=32;i++){
-//                int nextChar;
-//
-//                do{
-//                    nextChar = rng.nextInt(123);
-//                }while(!validCharacterValue(nextChar));
-//
-//                newName = String.format("%s%c", newName, nextChar);
-//            }
-//            newName += oldFileName;
-//        }while(!uniqueFileInDirectory(newName));
-//        return newName;
-//    }
+     private String getUniqueFileName(String oldFileName){
+        String newName;
+
+        SecureRandom rng = new SecureRandom();
+
+        do{
+            newName = "";
+
+            for (int i=1;i<=32;i++){
+                int nextChar;
+
+                do{
+                    nextChar = rng.nextInt(123);
+                }while(!validCharacterValue(nextChar));
+
+                newName = String.format("%s%c", newName, nextChar);
+            }
+            newName += oldFileName;
+        }while(!uniqueFileInDirectory(newName));
+        return newName;
+    }
 
     /**
      * A method that will search the images directory and ensure the file name is unique
      */
-//    public boolean uniqueFileInDirectory(String fileName){
-//        File directory = new File("../Views/Images");
-//
-//        File[] dir_contents = directory.listFiles();
-//
-//        for (File file: dir_contents){
-//            if(file.getName().equals(fileName)){
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
+    public boolean uniqueFileInDirectory(String fileName){
+        File directory = new File("./src/Views/Images");
+
+        File[] dir_contents = directory.listFiles();
+
+        for (File file: dir_contents){
+            if(file.getName().equals(fileName)){
+                return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * This method will validate if the integer given corresponds to a valid ASCII character that could be used in a file name
      */
-//    public boolean validCharacterValue(int asciiValue){
-//        //0-9 = ASCII range 48 to 57
-//        if(asciiValue >= 48 && asciiValue <= 57){
-//            return true;
-//        }
-//        //A-Z = ASCII range 65 to 90
-//        if (asciiValue >= 65 && asciiValue <= 90){
-//            return true;
-//        }
-//        //a-z = ASCII range 97 to 122
-//        if (asciiValue >= 97 && asciiValue <= 122){
-//            return true;
-//        }
-//        return false;
-//    }
+    public boolean validCharacterValue(int asciiValue){
+        //0-9 = ASCII range 48 to 57
+        if(asciiValue >= 48 && asciiValue <= 57){
+            return true;
+        }
+        //A-Z = ASCII range 65 to 90
+        if (asciiValue >= 65 && asciiValue <= 90){
+            return true;
+        }
+        //a-z = ASCII range 97 to 122
+        if (asciiValue >= 97 && asciiValue <= 122){
+            return true;
+        }
+        return false;
+    }
 }

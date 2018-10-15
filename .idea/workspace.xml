@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a306b10-ac9a-414e-838c-bc71e87c457c" name="Default Changelist" comment="">
+    <list default="true" id="6a306b10-ac9a-414e-838c-bc71e87c457c" name="Default Changelist" comment="Updated contact and fixed images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ContactTableViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ContactTableViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ContactViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ContactViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ContactView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ContactView.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,25 +109,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4737" />
-          <entry key="txt" value="91" />
+          <entry key="java" value="4758" />
+          <entry key="txt" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4737" />
-          <entry key="PLAIN_TEXT" value="91" />
+          <entry key="JAVA" value="4758" />
+          <entry key="PLAIN_TEXT" value="142" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="167" selection-start-line="167" selection-end-line="167" />
+            <state relative-caret-position="321">
+              <caret line="164" column="56" selection-start-line="164" selection-start-column="56" selection-end-line="164" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1219#1220#0" expanded="true" />
@@ -151,18 +148,16 @@
                 <element signature="e#2789#2790#0" expanded="true" />
                 <element signature="e#2831#2832#0" expanded="true" />
                 <element signature="e#2865#2866#0" expanded="true" />
-                <element signature="e#4754#4806#0" />
-                <element signature="e#5961#6018#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/DBConnect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="38" column="91" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+            <state relative-caret-position="-84">
+              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#insertContactIntoDB#0;class#DBConnect#0" />
@@ -227,8 +222,8 @@
         <option value="$PROJECT_DIR$/src/Controllers/ContactTableViewController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/ContactViewController.java" />
         <option value="$PROJECT_DIR$/src/Views/Launch.java" />
-        <option value="$PROJECT_DIR$/src/Models/Contact.java" />
         <option value="$PROJECT_DIR$/src/Models/DBConnect.java" />
+        <option value="$PROJECT_DIR$/src/Models/Contact.java" />
       </list>
     </option>
   </component>
@@ -301,7 +296,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539574448166" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539575347031" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../mysql-connector-java-5.1.44-bin.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -357,7 +352,7 @@
       <workItem from="1539522927311" duration="240000" />
       <workItem from="1539535562628" duration="1196000" />
       <workItem from="1539557619596" duration="937000" />
-      <workItem from="1539559292520" duration="15128000" />
+      <workItem from="1539559292520" duration="16035000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1538870948842</created>
@@ -429,17 +424,31 @@
       <option name="project" value="LOCAL" />
       <updated>1539563350093</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated contact and fixed images">
+      <created>1539574522507</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1539574522507</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added database file">
+      <created>1539575295568</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1539575295568</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41005000" />
+    <option name="totallyTimeSpent" value="41912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15974441" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15974441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -448,7 +457,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32930845" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32930845" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -516,7 +525,9 @@
     <MESSAGE value="Create contact and push to database" />
     <MESSAGE value="display validation messages and change scenes when contact is created" />
     <MESSAGE value="Added javadoc comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadoc comments" />
+    <MESSAGE value="Updated contact and fixed images" />
+    <MESSAGE value="Added database file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Views/ContactTableView.fxml">
@@ -565,10 +576,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/DBConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insertContactIntoDB#0;class#DBConnect#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/ContactTableViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="39" column="56" lean-forward="true" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="167" selection-start-line="167" selection-end-line="167" />
+        <state relative-caret-position="321">
+          <caret line="164" column="56" selection-start-line="164" selection-start-column="56" selection-end-line="164" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1219#1220#0" expanded="true" />
@@ -589,29 +621,6 @@
             <element signature="e#2789#2790#0" expanded="true" />
             <element signature="e#2831#2832#0" expanded="true" />
             <element signature="e#2865#2866#0" expanded="true" />
-            <element signature="e#4754#4806#0" />
-            <element signature="e#5961#6018#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/ContactTableViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="39" column="56" lean-forward="true" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/DBConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="38" column="91" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#insertContactIntoDB#0;class#DBConnect#0" />
           </folding>
         </state>
       </provider>
