@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class DBConnect {
     private static String userName = "root";
     private static String password = "";
-    //Fritz59!
 
     /**
      * Pull data from database and store into contact objects and return an arraylist with all the contacts
